@@ -1,0 +1,25 @@
+<section class="calc-section">
+  <div class="screen">
+    <div class="current-numbers">
+      <div class="first-num"><span *ngIf="calculatorState.negativeMode">{{"-"}}</span>{{calculatorState.firstNumber}}</div>
+      <div class="op">{{calculatorState.currentOperation}}</div>
+      <div class="second-num">{{calculatorState.secondNumber}}</div>
+    </div>
+    <!-- <div class="total">{{calculatorState.total}}</div> -->
+  </div>
+  <div class="buttons">
+    <div class="num-buttons">
+      <ng-container *ngFor="let num of [0,1,2,3,4,5,6,7,8,9]">
+        <div (click)="dispatchNumberClicked(num)" class="the-num-btn calc-btn">{{num}}</div>
+      </ng-container>
+      <div class="calc-btn" (click)="getTotal()">{{"="}}</div>
+      <div class="calc-btn" (click)="clear()">Clear</div>
+    </div>
+    <div class="op-buttons">
+      <div (click)="dispatchOp('+')" class="op calc-btn">{{"+"}}</div>
+      <div (click)="dispatchOp('-')" class="op calc-btn">{{"-"}}</div>
+      <div (click)="dispatchOp('*')" class="op calc-btn">{{"*"}}</div>
+      <div (click)="dispatchOp('/')" class="op calc-btn">{{"/"}}</div>
+    </div>
+  </div>
+</section>
