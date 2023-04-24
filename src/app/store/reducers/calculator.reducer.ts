@@ -6,7 +6,7 @@ export interface CalculatorState {
     secondNumber: number;
     currentOperation: string;
     negativeMode: boolean,
-    total: Number;
+    total: number;
 }
 
 const initialState: CalculatorState = {
@@ -61,9 +61,21 @@ export function calculatorReducer( state: CalculatorState = initialState, action
             let total: number = getTotal(state);         
             return {
                 ...state,
-                firstNumber : total,
+                firstNumber : null,
                 secondNumber: null,
                 currentOperation: null,
+                total : total,
+            }
+        }
+        case calculatorActions.ANS: {
+            console.log("ANS clicked"); 
+            let total: number = getTotal(state);      
+            return {
+                ...state,
+                firstNumber : state.total,
+                secondNumber: null,
+                currentOperation: null,
+                total : 0,
             }
         }
         case calculatorActions.NUMBER_ENTERED: {
@@ -114,7 +126,6 @@ export function calculatorReducer( state: CalculatorState = initialState, action
         case calculatorActions.CLEAR: {
             return initialState;
         }
-        
     }
     return state;
 }

@@ -1,6 +1,31 @@
 * {
     font-family: arial;
+    font-weight: bold;
+    font-size: 20px;
 }
+
+.current-numbers {
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    margin: 10px;
+}
+
+.input{
+    border-bottom: 1px solid black;
+    padding: 5px;
+    min-height: 20px;
+    text-align: center;
+} 
+
+.total{
+    font-size: 25px;
+    margin-left: 10px;
+}
+
+.screen{
+    margin-bottom: 15px;
+}
+
 .calc-btn{
     padding: 12px;
     color: #fff;
@@ -10,6 +35,7 @@
     transition: 1s all;
     cursor: pointer;
 }
+
 .calc-btn:hover{
         background: #000;
         border: none;
@@ -24,6 +50,7 @@
     'screen'
     'buttons';
 }
+
 .screen{
     padding: 22px;
     width: 60vw;
@@ -31,6 +58,7 @@
     grid-area: screen;
     border: 1px solid #242424;
 }
+
 .buttons{
     grid-area: buttons;
     display: grid;
@@ -38,24 +66,28 @@
     grid-template-areas: 
     'numbers numbers numbers operations';
 }
+
 .num-buttons{
     grid-area: numbers;
     display: grid;
     grid-template-columns: auto auto auto;
     grid-gap: 4px;
 }
+
 .the-num-btn{
     grid-column: auto;
     display: flex;
     justify-content: center;
     align-items: center;
-}       
+} 
+
 .op-buttons{
     grid-area: operations;
     display: grid;
     grid-gap: 4px;
     grid-template-rows: auto auto auto auto;
 }
+
 .op{
     grid-row: auto;
     display: flex;

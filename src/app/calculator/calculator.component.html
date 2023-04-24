@@ -1,11 +1,11 @@
 <section class="calc-section">
   <div class="screen">
     <div class="current-numbers">
-      <div class="first-num"><span *ngIf="calculatorState.negativeMode">{{"-"}}</span>{{calculatorState.firstNumber}}</div>
-      <div class="op">{{calculatorState.currentOperation}}</div>
-      <div class="second-num">{{calculatorState.secondNumber}}</div>
+      <div class="first-num input"><span *ngIf="calculatorState.negativeMode">{{"-"}}</span>{{calculatorState.firstNumber}}</div>
+      <div class="op input">{{calculatorState.currentOperation}}</div>
+      <div class="second-num input">{{calculatorState.secondNumber}}</div>
     </div>
-    <!-- <div class="total">{{calculatorState.total}}</div> -->
+    <div class="total">{{calculatorState.total}}</div>
   </div>
   <div class="buttons">
     <div class="num-buttons">
@@ -20,6 +20,7 @@
       <div (click)="dispatchOp('-')" class="op calc-btn">{{"-"}}</div>
       <div (click)="dispatchOp('*')" class="op calc-btn">{{"*"}}</div>
       <div (click)="dispatchOp('/')" class="op calc-btn">{{"/"}}</div>
+      <div (click)="ans()" class="op calc-btn">ANS</div>
     </div>
   </div>
 </section>

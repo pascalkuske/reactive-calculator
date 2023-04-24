@@ -9,6 +9,7 @@ export const NUMBER_ENTERED = "[Calc] number entered";
 export const OP_ENTERED = "[Calc] OP entered";
 export const GET_TOTAL = "[Calc] Get total entered";
 export const CLEAR = "[CALC] CLEAR";
+export const ANS = "[CALC] ANS";
 
 
 export class Add implements Action{
@@ -49,4 +50,8 @@ export class Clear implements Action {
     readonly type = CLEAR;
 }
 
-export type calculatorTypes = Add | Subtract | Division | Multiplication | NumberEntered | OpEntered | GetTotal | Clear;
+export class Ans implements Action {
+    readonly type = ANS;
+}
+
+export type calculatorTypes = Add | Subtract | Division | Multiplication | NumberEntered | OpEntered | GetTotal | Clear | Ans;

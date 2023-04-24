@@ -29,7 +29,6 @@ export class CalculatorComponent implements OnInit {
   }
 
   dispatchOp(op: string){
-  
     this.store.dispatch(new allActions.OpEntered(op));
   }
 
@@ -41,4 +40,7 @@ export class CalculatorComponent implements OnInit {
     this.store.dispatch(new allActions.Clear());
   }
 
+  ans(){
+    this.store.dispatch(new allActions.Ans());
+  }
 }
